@@ -4,11 +4,8 @@
 
     }
   }
-  &__links{
-    a{
-      text-decoration: none;
-    }
-  }
+
+ 
 
   nav{
     padding: 24px;
@@ -24,6 +21,51 @@
       &:not(:last-child){
         margin-bottom: 3px;
       }
+    }
+  }
+
+  &__links{
+    
+    a{
+      position: relative;
+      font-size: $font-sm;
+      color: $GrayishBlue;
+      margin-left: 20px;
+      transition: color 200ms ease-in-out;
+
+      &::before {
+        transition: opacity 200ms ease-in-out;
+        content: "";
+        position: absolute;
+        display: block;
+        height: 5px;
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        background-image: linear-gradient(to right,$LimeGreen, $BrightCyan);
+        opacity: 0;
+        
+       
+        
+      }
+
+      &:hover{
+        color: $DarkBlue;
+        &::before{
+          opacity: 100;
+        }
+      }
+    }
+
+    
+  }
+
+  &__cta{
+    font-size: $font-sm;
+    color: $White;
+    transition: opacity 200ms ease-in-out;
+    &:hover{
+      opacity: 0.75;
     }
   }
 }
